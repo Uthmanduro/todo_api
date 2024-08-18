@@ -2,10 +2,9 @@ const { Sequelize } = require('sequelize');
 require('dotenv').config();
 const { pg } = require('pg');
 
-// const sequelize = new Sequelize(process.env.DB_URL, {
-//     dialectModule: pg
-// })
-const sequelize = new Sequelize('sqlite::memory:');
+const sequelize = new Sequelize(process.env.DB_URL, {
+    dialectModule: pg
+})
 
 const authSync = async () => {
     try {
